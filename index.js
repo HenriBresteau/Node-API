@@ -3,6 +3,6 @@ const app = express();
 require("./models/dbConfig")
 const postsRoutes = require('./routes/postsController');
 
-app.use('/', postsRoutes);
+app.use('/posts', postsRoutes);
 
 app.listen(5500, ()=> console.log('Serveur started : 5500'));
