@@ -20,7 +20,7 @@ router.post('/', (req, res)=>{
     });
     newRecord.save((err,docs)=>{
         if (!err) {
-            req.send(docs);
+            res.send(docs);
         } else{
             console.log(`Error creating new data ${err}`);
         }
