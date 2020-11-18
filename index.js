@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 require("./models/dbConfig")
 const postsRoutes = require('./routes/postsController');
+const bodyParser = require("body-parser");
 
 app.use('/posts', postsRoutes);
 
