@@ -13,4 +13,20 @@ router.get('/', (req, res) => {
     })
 })
 
+router.post('/', (req, res)=>{
+    const newRecord = new PostsModel({
+        author: req.body.author,
+        message: req.body.message,
+    });
+    newRecord.save((err,docs)=>{
+        if (!err) {
+            req.send(docs);
+        } else{
+            console.log(`Error creating new data ${err}`);
+        }
+    })
+})
+
+
+
 module.exports = router
